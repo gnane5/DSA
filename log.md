@@ -1,0 +1,15 @@
+# Attempt log
+
+One row per attempt. Failed attempts count. Re-solves get their own row.
+
+`unaided` - Y if you got there with no editorial, no hints, no notes.
+`min` - wall-clock minutes on the attempt.
+`the tell` - **the column that matters.** What in the question's *wording* told
+you which pattern to reach for. In your own words, every time, even the easy
+ones. In week 13 you reread this column, not the code.
+
+| date  | #   | problem           | pattern          | unaided | min | the tell |
+|-------|-----|-------------------|------------------|---------|-----|----------|
+| 09-05 | 217 | Contains Duplicate | brute: 2 loops  | Y       | ?   | first instinct - compare everything to everything. O(n^2), too slow, and I was comparing elements with themselves |
+| 09-06 | 217 | Contains Duplicate | set / seen       | N       | ?   | "does the array contain any duplicate" = a yes/no about repeats. Repeats -> I need to remember what I've already seen -> set, because `in` on a set is O(1) |
+| 09-06 | 242 | Valid Anagram | frequency map | N | 30min | i had taken the hind on dict to solve this first i was comaparing it with 2 for loop no the dict|
