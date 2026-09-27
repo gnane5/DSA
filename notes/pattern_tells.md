@@ -268,9 +268,32 @@ and the interesting part is the argument: why is it always safe to move the
 *shorter* side? Be able to say that in two sentences - the proof is the
 question, not the code.
 
+**In place, or build a new array?** This decides whether you need a third
+index, and it caught me for five rounds on LC 977.
+
+A swap requires knowing BOTH destinations. Walking from the ends you only ever
+know ONE - where the largest goes, which is last. You have no idea yet where
+anything else belongs. So:
+
+    every slot still holds data I need   ->  write into a NEW array
+    destination known, or free space     ->  in place
+
+LC 977 needs a new array (every slot in nums is still live). LC 88 Merge Sorted
+Array does NOT - the padding at the end is already free. LC 283 Move Zeroes
+does not either. Same backwards-fill trick, opposite answer on the array.
+
+When you do build a new array you get a third index - a WRITE CURSOR. It is not
+a third pointer: it moves by one every pass, unconditionally, and no comparison
+touches it. Two pointers decide; the cursor just counts.
+
 **Cost.** O(n) time, O(1) space. The naive version of a palindrome check
 builds a reversed copy, which is O(n) space - that's the trade this pattern
 removes.
 
-**Taught by.** LC 125 Valid Palindrome. Next: 167 Two Sum II (sortedness is
-the whole difference from Two Sum), 15 3Sum, 11 Container With Most Water.
+**Taught by.** LC 125 Valid Palindrome (symmetry) and LC 167 Two Sum II
+(sortedness). Next: 15 3Sum, 11 Container With Most Water.
+
+**The 167 lesson, worth keeping separate.** Unsorted, I must remember what I
+have passed -> hash map, O(n) space. Sorted, the array itself tells me which
+direction is bigger -> two pointers, O(1) space. *Sortedness replaces the hash
+map.* The word "sorted" in an array problem is almost always the hint.

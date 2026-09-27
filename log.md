@@ -22,6 +22,8 @@ ones. In week 13 you reread this column, not the code.
 | 09-25 | 238 | Product Except Self | prefix x suffix | N | ?   | "everything EXCEPT this one" -> the answer at i splits into (everything left) x (everything right), and each side is a running accumulator computed in one pass. Division is banned, which is the hint that this is the intended shape. Typed it from memory and had `prefix *= out[i]` instead of `nums[i]` - the accumulator accumulates the INPUT |
 
 | 09-27 | 125 | Valid Palindrome | converging two pointers | N | ?   | "same forwards and backwards" -> a pair from opposite ends -> one pointer each end, walking inward. What makes it two pointers and not two passes: each step I decide WHICH pointer to move, from a comparison. Four rounds: forgot to compare at all, indexed s instead of c, handled only the match branch (infinite loop on "race a car"), and print(True) inside the loop for the 7th time |
+| 09-27 | 167 | Two Sum II | converging two pointers | Y | ?   | "two numbers that add to target" AND the array is SORTED -> two pointers, not a hash map. Sortedness replaces the dict: unsorted I must remember what I passed (O(n) space), sorted the array itself tells me which way is bigger (O(1) space). Safe to discard because numbers[y] is the LARGEST left - if that sum is already too big, y pairs with nothing remaining. FIRST ONE UNAIDED; only hints were the 1-indexed output format (LC 1 is 0-indexed, 167 is not) |
+| 09-27 | 977 | Squares of a Sorted Array *(extra)* | converging + backwards fill | N | ?   | sorted input, but squaring breaks the order symmetrically -> the extremes become the largest -> two pointers from the ends, filling the answer BACKWARDS, because the only thing I can ever name is the largest remaining. Six rounds, five of them spent trying to swap in place: a swap needs BOTH destinations and I only ever know one. No free space in nums = build a new array. Also: this is a MERGE of two ordered runs, not a sort - which is why it's O(n) and not O(n log n) |
 ---
 
 ## Still open
@@ -30,8 +32,6 @@ ones. In week 13 you reread this column, not the code.
   217, 242, 1, 169, 49, 238, 125. That is all of them but two.
 - **128 Longest Consecutive Sequence** - best remaining problem in Arrays &
   Hashing, and the only one left there that teaches something new.
-- **167 Two Sum II** - next two-pointer. Sortedness is the whole difference
-  from Two Sum; be able to say why it lets you discard half the search space.
 - **09_prod_numbers.md** in the system_design folder - still `[N]` on almost
   every row, and the only thing on any of these lists that expires.
 

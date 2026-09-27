@@ -6,7 +6,7 @@ you solve it.
 **Status:** `done` · `partial` (brute force only, or optimal not reached) ·
 `—` (not started)
 
-**Score: 6 done, 0 partial, 144 to go.** Plus 1 extra (169) that isn't on the
+**Score: 7 done, 0 partial, 143 to go.** Plus 2 extras (169, 977) that aren't on the
 list.
 
 Last updated: Sep 27, 2026
@@ -81,12 +81,12 @@ a real pattern map beats a hundred and fifty half-remembered.
 remaining one that teaches something new. Then 347. 36 and 271 are fiddly and
 low-value; do them last or skip them this pass.
 
-## Phase 2 — Two Pointers (1 / 5)
+## Phase 2 — Two Pointers (2 / 5)
 
 | # | Problem | Diff | Pattern | Status |
 |---|---------|------|---------|--------|
 | 125 | Valid Palindrome | E | converging | **done** |
-| 167 | Two Sum II | M | converging on sorted | — |
+| 167 | Two Sum II | M | converging on sorted | **done** |
 | 15 | 3Sum | M | sort + converge | — |
 | 11 | Container With Most Water | M | converging + proof | — |
 | 42 | Trapping Rain Water | H | converging | — |
@@ -192,6 +192,7 @@ Hand of Straights · Merge Triplets · Partition Labels · Valid Parenthesis Str
 | # | Problem | Diff | Pattern | Status |
 |---|---------|------|---------|--------|
 | 169 | Majority Element | E | frequency map **and** Boyer-Moore O(1) space | **done**, both |
+| 977 | Squares of a Sorted Array | E | converging two pointers + backwards fill | **done**, both |
 
 ---
 
@@ -204,7 +205,7 @@ From `notes/pattern_tells.md` — 4 of 5 sections written.
 3. **counter / frequency map** — 242, 169
 4. **canonical key** — 49
 5. **prefix × suffix** — 238
-6. **converging two pointers** — 125
+6. **converging two pointers** — 125, 167
 
 ## Still owed
 
